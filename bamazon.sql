@@ -42,3 +42,9 @@ VALUES ("Dog Bed", "Pet Supplies", 20.00, 50);
 
 INSERT INTO products (product_name, department_name, price, stock_quantity)
 VALUES ("Bully Sticks", "Pet Supplies", 25.00, 50);
+
+SELECT * FROM products WHERE item_id=3;
+
+UPDATE products SET stock_quantity=20 WHERE item_id=4;
+
+SELECT * FROM products;

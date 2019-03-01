@@ -1,11 +1,11 @@
 var mysql = require("mysql");
-
+var inquirer = require('inquirer');
+var tab = require('table-master');
 var connection = mysql.createConnection({
   host: "localhost",
 
   // Your port
-  port: 8889
-  ,
+  port: 8889,
 
   // Your username
   user: "root",
@@ -15,6 +15,7 @@ var connection = mysql.createConnection({
   database: "bamazon_db"
 });
 
+//connect to bamazon database
 connection.connect(function(err) {
     if (err) throw err;
     // console.log("connected as id " + connection.threadId);
@@ -26,7 +27,7 @@ connection.query("SELECT * FROM products; ", function(err, res){
     askQuestions()
 })
 
-var inquirer = require('inquirer');
+
 function askQuestions() {
     inquirer
     .prompt([{
@@ -39,6 +40,7 @@ function askQuestions() {
         message: "how many would you like to purchase?",
         name: "Qty" 
     }])
+    
     .then(answers => {
       console.log("answers", answers)
       connection.query("SELECT * FROM products WHERE item_id="+ answers.Item, function(err, res){
@@ -58,4 +60,3 @@ function askQuestions() {
     });   
 }
 
-//fulfill customers order
