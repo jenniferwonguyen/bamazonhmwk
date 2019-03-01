@@ -1,6 +1,6 @@
 var mysql = require("mysql");
 var inquirer = require('inquirer');
-var tab = require('table-master');
+// var tab = require('table-master'); attempt to add tables to products
 var connection = mysql.createConnection({
   host: "localhost",
 
