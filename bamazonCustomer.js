@@ -32,7 +32,7 @@ function askQuestions() {
     inquirer
     .prompt([{
         type:"input",
-        message: "what would you like to purchase?",
+        message: "what would you like to purchase? (choose item id)",
         name: "Item"
   
     },{
@@ -60,3 +60,5 @@ function askQuestions() {
     });   
 }
 
+//Incomplete portion pseudocode 
+//Total price of purchase could not be complete
